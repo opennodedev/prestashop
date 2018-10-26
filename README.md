@@ -11,7 +11,7 @@ Full setup guide: <https://medium.com/@OpenNode/how-to-accept-bitcoin-in-your-pr
 
 1. Sign up at <https://opennode.co>
 
-2. Download <https://github.com/opennodedev/prestashop/releases/download/opennode.zip>
+2. [Download the module](https://github.com/opennodedev/prestashop/releases/download/download/opennode.zip)
 
 2. Go to your PrestaShop admin panel » **Modules and Services**.
 
