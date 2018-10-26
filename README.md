@@ -3,7 +3,7 @@
 Accept bitcoin instantly on your WooCommerce store.
 
 Read the plugin installation instructions below to get started with OpenNode payment gateway on your shop.
-Full setup guide: <https://blogposthere>
+Full setup guide: <https://medium.com/@OpenNode/how-to-accept-bitcoin-in-your-prestashop-store-de6ffeb1896b>
 
 **Plugin is compatible with Prestashop 1.6 or greater version**
 
@@ -19,6 +19,6 @@ Full setup guide: <https://blogposthere>
 
 4. In the **Modules & Services** click on **Selection** tab and search for "opennode".
 
-5. Find **Accept Bitcoin instantly via OpenNode** and click **Install** button to next to it, then click **Proceed with the installation**.
+5. Find **Accept Bitcoin instantly via OpenNode** and click **Install** button to next to it, then click **Configure**.
 
 6. Click on **Configure Settings** input your API Key and click **Save**.

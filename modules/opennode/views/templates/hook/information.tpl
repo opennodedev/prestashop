@@ -25,7 +25,7 @@
          </li>
 	  		<li>{l s='Generate your API Credentials and copy-paste them to the OpenNode module settings' mod='opennode'}</li>
 	  		<li>{l s='Read our ' mod='opennode'}
-          <a href="https://link_for_blog_post.com" target="_blank">
+          <a href="https://medium.com/@OpenNode/how-to-accept-bitcoin-in-your-prestashop-store-de6ffeb1896b" target="_blank">
             {l s='PrestaShop detailed installation guide.' mod='opennode'}
           </a>
 	  	</ul>
