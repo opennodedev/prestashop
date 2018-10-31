@@ -60,7 +60,7 @@ class OpennodeCallbackModuleFrontController extends ModuleFrontController
                 case 'pending':
                     $order_status = 'OPENNODE_PENDING';
                     break;
-                case 'confirming':
+                case 'processing':
                     $order_status = 'OPENNODE_CONFIRMING';
                     break;
                 case 'canceled':
