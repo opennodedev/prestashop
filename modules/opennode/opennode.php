@@ -1,4 +1,32 @@
 <?php
+/**
+* NOTICE OF LICENSE
+* The MIT License (MIT)
+*
+* Copyright (c) 2018 OpenNode https://opennode.co
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+*
+* @author    OpenNode <hello@opennode.co>
+* @copyright 2018 OpenNode
+* @license   https://github.com/opennodedev/prestashop/blob/master/LICENSE  The MIT License (MIT)
+*/
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -23,7 +51,7 @@ class OpenNode extends PaymentModule
         $this->is_eu_compatible = 1;
         $this->controllers = array('payment', 'redirect', 'callback', 'cancel');
         $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
-        //$this->module_key = '';
+        $this->module_key = 'b64bcc26da067c2c6d2d0d235c6b2fe0';
 
         $this->bootstrap = true;
 
@@ -119,14 +147,6 @@ class OpenNode extends PaymentModule
         if (Tools::isSubmit('btnSubmit')) {
             if (!Tools::getValue('OPENNODE_API_AUTH_TOKEN')) {
                 $this->postErrors[] = $this->l('API Key is required.');
-            }
-
-            if (empty($this->postErrors)) {
-                $cgConfig = array(
-                    'auth_token'  => $this->stripString(Tools::getValue('OPENNODE_API_AUTH_TOKEN')),
-                    'environment' => 'live',
-                    'user_agent'  => 'OpenNode - Prestashop v' . _PS_VERSION_,
-                );
             }
         }
     }
@@ -311,7 +331,12 @@ class OpenNode extends PaymentModule
     public function getConfigFieldsValues()
     {
         return array(
-            'OPENNODE_API_AUTH_TOKEN' => $this->stripString(Tools::getValue('OPENNODE_API_AUTH_TOKEN', Configuration::get('OPENNODE_API_AUTH_TOKEN'))),
+            'OPENNODE_API_AUTH_TOKEN' => $this->stripString(
+                Tools::getValue(
+                    'OPENNODE_API_AUTH_TOKEN',
+                    Configuration::get('OPENNODE_API_AUTH_TOKEN')
+                )
+            ),
         );
     }
 

@@ -1,4 +1,32 @@
 <?php
+/**
+* NOTICE OF LICENSE
+* The MIT License (MIT)
+*
+* Copyright (c) 2018 OpenNode https://opennode.co
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+*
+* @author    OpenNode <hello@opennode.co>
+* @copyright 2018 OpenNode
+* @license   https://github.com/opennodedev/prestashop/blob/master/LICENSE  The MIT License (MIT)
+*/
 
 require_once(_PS_MODULE_DIR_ . '/opennode/vendor/opennode/init.php');
 require_once(_PS_MODULE_DIR_ . '/opennode/vendor/version.php');
@@ -46,19 +74,19 @@ class OpenNodeRedirectModuleFrontController extends ModuleFrontController
         \OpenNode\OpenNode::config($apiConfig);
 
         try {
-          $order = \OpenNode\Merchant\Charge::create(array(
-            'order_id'         => $cart->id,
-            'amount'           => (strtoupper($currency->iso_code)) === 'BTC' ? convertToSats($total) : number_format($total, 8, '.', ''),
-            'currency'         => $currency->iso_code,
-            'auto_settle'      => true,
-            'callback_url'     => $this->context->link->getModuleLink('opennode', 'callback'),
-            'success_url'      => $success_url,
-            'description'      => join($description, ', '),
-            'name'             => $customer->firstname . ' ' . $customer->lastname,
-            'email'            => $customer->email
-        ));
-        } catch(Exception $e){
-          Tools::redirect('index.php?controller=order&step=3');
+            $order = \OpenNode\Merchant\Charge::create(array(
+                'order_id'         => $cart->id,
+                'amount'           => calculateAmount($currency->iso_code, $total),
+                'currency'         => $currency->iso_code,
+                'auto_settle'      => true,
+                'callback_url'     => $this->context->link->getModuleLink('opennode', 'callback'),
+                'success_url'      => $success_url,
+                'description'      => join($description, ', '),
+                'name'             => $customer->firstname . ' ' . $customer->lastname,
+                'email'            => $customer->email
+            ));
+        } catch (Exception $e) {
+            Tools::redirect('index.php?controller=order&step=3');
         }
 
         if ($order) {
@@ -85,8 +113,17 @@ class OpenNodeRedirectModuleFrontController extends ModuleFrontController
         }
     }
 
-    private function convertToSats($amount) {
-      number_format($amount*100000000, 8, '.', '');
+    private function convertToSats($amount)
+    {
+        return number_format($amount*100000000, 8, '.', '');
     }
 
+    private function calculateAmount($currency, $total)
+    {
+        if (Tools::strtoupper($currency) === 'BTC') {
+            return convertToSats($total);
+        } else {
+            return number_format($total, 8, '.', '');
+        }
+    }
 }
