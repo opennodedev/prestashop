@@ -92,6 +92,14 @@ class OpenNode extends PaymentModule
         $order_pending->unremovable = false;
         $order_pending->logable = 0;
 
+        $order_underpaid = new OrderState();
+        $order_underpaid->name = array_fill(0, 10, 'Customer has paid via standard on-Chain, but has underpaid. Waiting on user to send the remainder before marking as PAID');
+        $order_underpaid->send_email = 0;
+        $order_underpaid->invoice = 0;
+        $order_underpaid->color = '#f0ce00';
+        $order_underpaid->unremovable = false;
+        $order_underpaid->logable = 0;
+
         $order_confirming = new OrderState();
         $order_confirming->name = array_fill(0, 10, 'Awaiting 1 confirmation by Bitcoin network');
         $order_confirming->send_email = 0;
@@ -107,6 +115,13 @@ class OpenNode extends PaymentModule
             );
         }
 
+        if ($order_underpaid->add()) {
+            copy(
+                _PS_ROOT_DIR_ . '/modules/opennode/logo.png',
+                _PS_ROOT_DIR_ . '/img/os/' . (int) $order_underpaid->id . '.png'
+            );
+        }
+
         if ($order_confirming->add()) {
             copy(
                 _PS_ROOT_DIR_ . '/modules/opennode/logo.png',
@@ -115,6 +130,7 @@ class OpenNode extends PaymentModule
         }
 
         Configuration::updateValue('OPENNODE_PENDING', $order_pending->id);
+        Configuration::updateValue('OPENNODE_UNDERPAID', $order_underpaid->id);
         Configuration::updateValue('OPENNODE_CONFIRMING', $order_confirming->id);
 
         if (!parent::install()
@@ -131,12 +147,14 @@ class OpenNode extends PaymentModule
     public function uninstall()
     {
         $order_state_pending = new OrderState(Configuration::get('OPENNODE_PENDING'));
+        $order_state_underpaid = new OrderState(Configuration::get('OPENNODE_UNDERPAID'));
         $order_state_confirming = new OrderState(Configuration::get('OPENNODE_CONFIRMING'));
 
         return (
             Configuration::deleteByName('OPENNODE_APP_ID') &&
             Configuration::deleteByName('OPENNODE_API_AUTH_TOKEN') &&
             $order_state_pending->delete() &&
+            $order_state_underpaid->delete() &&
             $order_state_confirming->delete() &&
             parent::uninstall()
         );
