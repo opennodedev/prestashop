@@ -93,7 +93,7 @@ class OpenNode extends PaymentModule
         $order_pending->logable = 0;
 
         $order_underpaid = new OrderState();
-        $order_underpaid->name = array_fill(0, 10, 'Customer has paid via standard on-Chain, but has underpaid. Waiting on user to send the remainder before marking as PAID');
+        $order_underpaid->name = array_fill(0, 10, 'Waiting on user to send the remainder before marking as PAID');
         $order_underpaid->send_email = 0;
         $order_underpaid->invoice = 0;
         $order_underpaid->color = '#f0ce00';
