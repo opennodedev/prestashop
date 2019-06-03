@@ -30,7 +30,7 @@
 
 require_once(_PS_MODULE_DIR_ . '/opennode/vendor/opennode/init.php');
 require_once(_PS_MODULE_DIR_ . '/opennode/vendor/version.php');
-define('OPENNODE_CHECKOUT_PATH', 'https://opennode.co/checkout/');
+define('OPENNODE_CHECKOUT_PATH', 'https://checkout.opennode.co/');
 
 class OpenNodeRedirectModuleFrontController extends ModuleFrontController
 {

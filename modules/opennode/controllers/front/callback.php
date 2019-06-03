@@ -89,6 +89,9 @@ class OpennodeCallbackModuleFrontController extends ModuleFrontController
                 case 'pending':
                     $order_status = 'OPENNODE_PENDING';
                     break;
+                case 'underpaid':
+                    $order_status = 'OPENNODE_UNDERPAID';
+                    break;
                 case 'processing':
                     $order_status = 'OPENNODE_CONFIRMING';
                     break;
@@ -96,7 +99,7 @@ class OpennodeCallbackModuleFrontController extends ModuleFrontController
                     $order_status = 'PS_OS_CANCELED';
                     break;
                 case 'refunded':
-                    $order_status = 'PS_OS_REFUND';
+                    $order_status = 'PS_OS_CANCELED';
                     break;
                 default:
                     $order_status = false;
@@ -109,7 +112,7 @@ class OpennodeCallbackModuleFrontController extends ModuleFrontController
                 $history->addWithemail(true, array(
                     'order_name' => Tools::getValue('order_id'),
                 ));
-
+                
                 $this->context->smarty->assign(array(
                     'text' => 'OK'
                 ));
