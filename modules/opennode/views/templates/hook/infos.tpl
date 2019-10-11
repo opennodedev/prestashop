@@ -2,7 +2,7 @@
 * NOTICE OF LICENSE
 The MIT License (MIT)
 
-Copyright (c) 2018 OpenNode https://opennode.co
+Copyright (c) 2019 OpenNode https://opennode.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *
-*  @author    OpenNode <hello@opennode.co>
-*  @copyright 2018 OpenNode
+*  @author    OpenNode <hello@opennode.com>
+*  @copyright 2019 OpenNode
 *  @license   https://github.com/opennodedev/prestashop/blob/master/LICENSE  The MIT License (MIT)
 *}
 <div class="alert alert-info">
     <p>
-        <strong>{l s='Having trouble? ' mod='opennode'}</strong>{l s='Contact ' mod='opennode'}<a href="mailto:support@opennode.co">{l s='support@opennode.co' mod='opennode'}</a>
-        {l s='or chat with us at ' mod='opennode'}<a href="https://opennode.co/" target="_blank">{l s='OpenNode.co' mod='opennode'}</a>.
+        <strong>{l s='Having trouble? ' mod='opennode'}</strong>{l s='Contact ' mod='opennode'}<a href="mailto:support@opennode.com">{l s='support@opennode.com' mod='opennode'}</a>
+        {l s='or chat with us at ' mod='opennode'}<a href="https://opennode.com/" target="_blank">{l s='OpenNode.com' mod='opennode'}</a>.
     </p>
 </div>

@@ -2,7 +2,7 @@
 * NOTICE OF LICENSE
 The MIT License (MIT)
 
-Copyright (c) 2018 OpenNode https://opennode.co
+Copyright (c) 2019 OpenNode https://opennode.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *
-*  @author    OpenNode <hello@opennode.co>
-*  @copyright 2018 OpenNode
+*  @author    OpenNode <hello@opennode.com>
+*  @copyright 2019 OpenNode
 *  @license   https://github.com/opennodedev/prestashop/blob/master/LICENSE  The MIT License (MIT)
 *}
 {capture name=path}

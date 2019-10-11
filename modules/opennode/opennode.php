@@ -3,7 +3,7 @@
 * NOTICE OF LICENSE
 * The MIT License (MIT)
 *
-* Copyright (c) 2018 OpenNode https://opennode.co
+* Copyright (c) 2019 OpenNode https://opennode.com
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -23,8 +23,8 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 * THE SOFTWARE.
 *
-* @author    OpenNode <hello@opennode.co>
-* @copyright 2018 OpenNode
+* @author    OpenNode <hello@opennode.com>
+* @copyright 2019 OpenNode
 * @license   https://github.com/opennodedev/prestashop/blob/master/LICENSE  The MIT License (MIT)
 */
 
@@ -47,7 +47,7 @@ class OpenNode extends PaymentModule
         $this->name = 'opennode';
         $this->tab = 'payments_gateways';
         $this->version = '1.0.0';
-        $this->author = 'OpenNode.co';
+        $this->author = 'OpenNode.com';
         $this->is_eu_compatible = 1;
         $this->controllers = array('payment', 'redirect', 'callback', 'cancel');
         $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);

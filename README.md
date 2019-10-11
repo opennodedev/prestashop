@@ -9,7 +9,7 @@ Full setup guide: <https://medium.com/@OpenNode/how-to-accept-bitcoin-in-your-pr
 
 ## Install
 
-1. Sign up at <https://opennode.co>
+1. Sign up at <https://opennode.com>
 
 2. [Download the module](https://github.com/opennodedev/prestashop/releases/download/download/opennode.zip)
 

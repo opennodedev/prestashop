@@ -2,7 +2,7 @@
 * NOTICE OF LICENSE
 The MIT License (MIT)
 
-Copyright (c) 2018 OpenNode https://opennode.co
+Copyright (c) 2019 OpenNode https://opennode.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *
-*  @author    OpenNode <hello@opennode.co>
-*  @copyright 2018 OpenNode
+*  @author    OpenNode <hello@opennode.com>
+*  @copyright 2019 OpenNode
 *  @license   https://github.com/opennodedev/prestashop/blob/master/LICENSE  The MIT License (MIT)
 *}
 <div class="tab">
@@ -48,7 +48,7 @@ THE SOFTWARE.
 	  	<ul>
 	  		<li>{l s='Install the OpenNode module on PrestaShop' mod='opennode'}</li>
 	  		<li>
-          {l s='Visit ' mod='opennode'}<a href="https://opennode.co" target="_blank">{l s='opennode.co' mod='opennode'}</a>
+          {l s='Visit ' mod='opennode'}<a href="https://opennode.com" target="_blank">{l s='opennode.com' mod='opennode'}</a>
           {l s='and create an account' mod='opennode'}
          </li>
 	  		<li>{l s='Generate your API Credentials and copy-paste them to the OpenNode module settings' mod='opennode'}</li>
@@ -58,7 +58,7 @@ THE SOFTWARE.
           </a>
 	  	</ul>
 	  </p>
-	  <p><i>{l s='Got questions? Contact support@opennode.co!' mod='opennode'}</i></p>
+	  <p><i>{l s='Got questions? Contact support@opennode.com!' mod='opennode'}</i></p>
 	</div>
 </div>
 

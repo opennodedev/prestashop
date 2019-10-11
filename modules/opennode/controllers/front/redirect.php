@@ -3,7 +3,7 @@
 * NOTICE OF LICENSE
 * The MIT License (MIT)
 *
-* Copyright (c) 2018 OpenNode https://opennode.co
+* Copyright (c) 2019 OpenNode https://opennode.com
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,14 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 * THE SOFTWARE.
 *
-* @author    OpenNode <hello@opennode.co>
-* @copyright 2018 OpenNode
+* @author    OpenNode <hello@opennode.com>
+* @copyright 2019 OpenNode
 * @license   https://github.com/opennodedev/prestashop/blob/master/LICENSE  The MIT License (MIT)
 */
 
 require_once(_PS_MODULE_DIR_ . '/opennode/vendor/opennode/init.php');
 require_once(_PS_MODULE_DIR_ . '/opennode/vendor/version.php');
-define('OPENNODE_CHECKOUT_PATH', 'https://checkout.opennode.co/');
+define('OPENNODE_CHECKOUT_PATH', 'https://checkout.opennode.com/');
 
 class OpenNodeRedirectModuleFrontController extends ModuleFrontController
 {
