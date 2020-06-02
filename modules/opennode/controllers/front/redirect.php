@@ -76,7 +76,7 @@ class OpenNodeRedirectModuleFrontController extends ModuleFrontController
         try {
             $order = \OpenNode\Merchant\Charge::create(array(
                 'order_id'         => $cart->id,
-                'amount'           => calculateAmount($currency->iso_code, $total),
+                'amount'           => $this->calculateAmount($currency->iso_code, $total),
                 'currency'         => $currency->iso_code,
                 'auto_settle'      => true,
                 'callback_url'     => $this->context->link->getModuleLink('opennode', 'callback'),
